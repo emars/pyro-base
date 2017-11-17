@@ -4,4 +4,6 @@ This is the base project for Pyro Apps.
 
 ## Installation
 
+
 `yarn install`
+`yarn run start`
