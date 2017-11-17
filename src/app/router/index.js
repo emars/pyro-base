@@ -15,7 +15,9 @@ const withLayout = Component => () => (
 )
 
 const Router = () => (
-  <div {...{ style: { display: 'flex', flex: 1 } }}>
+  <div
+    {...{ style: { display: 'flex', flex: 1, width: '100%', height: '100%' } }}
+  >
     <Route {...{ component: withLayout(RootPage), exact: true, path: '/' }} />
     <Route
       {...{ component: withLayout(LoginPage), exact: true, path: '/login' }}

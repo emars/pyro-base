@@ -8,7 +8,6 @@ import { MuiThemeProvider } from 'material-ui/styles'
 
 import theme from 'config/theme'
 import store, { history } from 'config/redux'
-import Layout from 'app/components/Layout'
 import Router from 'app/router'
 
 const App = () => {
@@ -16,9 +15,7 @@ const App = () => {
     <Provider {...{ store }}>
       <ConnectedRouter {...{ history }}>
         <MuiThemeProvider {...{ theme }}>
-          <Layout>
-            <Router />
-          </Layout>
+          <Router />
         </MuiThemeProvider>
       </ConnectedRouter>
     </Provider>

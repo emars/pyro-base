@@ -4,6 +4,8 @@ import Toolbar from 'material-ui/Toolbar'
 import Typography from 'material-ui/Typography'
 import Button from 'material-ui/Button'
 
+import { grey } from 'material-ui/colors'
+
 import { Link } from 'react-router-dom'
 
 const Navbar = () => (
@@ -40,9 +42,55 @@ const Navbar = () => (
   </AppBar>
 )
 
+const Footer = () => (
+  <div
+    {...{
+      style: {
+        width: '100%',
+        height: 200,
+        backgroundColor: grey[100],
+        display: 'flex',
+        justifyContent: 'space-around'
+      }
+    }}
+  >
+    <div
+      {...{
+        style: {
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }
+      }}
+    >
+      <div
+        {...{
+          style: {
+            margin: 4
+          }
+        }}
+      >
+        <Typography {...{ type: 'caption' }}>
+          Copyright {new Date().getFullYear()}
+        </Typography>
+      </div>
+      <div
+        {...{
+          style: {
+            margin: 4
+          }
+        }}
+      >
+        <Typography {...{ type: 'caption' }}>Made with {'<3'}</Typography>
+      </div>
+    </div>
+  </div>
+)
+
 const Layout = ({ children }) => {
   return (
-    <div>
+    <div {...{ style: { flex: 1, display: 'flex', flexDirection: 'column' } }}>
       <Navbar />
       <div
         {...{
@@ -50,12 +98,14 @@ const Layout = ({ children }) => {
             marginTop: 100,
             marginRight: 'auto',
             marginLeft: 'auto',
-            width: 960
+            width: 960,
+            flex: 1
           }
         }}
       >
         {children}
       </div>
+      <Footer />
     </div>
   )
 }
