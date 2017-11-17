@@ -1,7 +1,7 @@
 import React from 'react'
 import { Auth } from 'pyro-components'
 
-const LogIn = () => (
+const LogIn = ({ handleLoginSuccess }) => (
   <div
     {...{
       style: { display: 'flex', alignItems: 'center', justifyContent: 'center' }
@@ -11,7 +11,7 @@ const LogIn = () => (
       {...{
         isSignUp: false,
         onSuccess: user => {
-          console.log('yay')
+          handleLoginSuccess()
         }
       }}
     />

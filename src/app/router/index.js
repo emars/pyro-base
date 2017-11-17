@@ -14,6 +14,8 @@ const withLayout = Component => () => (
   </Layout>
 )
 
+// HOC to redirect if user is not logged in
+
 const Router = () => (
   <div
     {...{ style: { display: 'flex', flex: 1, width: '100%', height: '100%' } }}

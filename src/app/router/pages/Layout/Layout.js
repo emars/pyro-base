@@ -1,46 +1,8 @@
 import React from 'react'
-import AppBar from 'material-ui/AppBar'
-import Toolbar from 'material-ui/Toolbar'
-import Typography from 'material-ui/Typography'
-import Button from 'material-ui/Button'
-
 import { grey } from 'material-ui/colors'
-
-import { Link } from 'react-router-dom'
-
-const Navbar = () => (
-  <AppBar>
-    <Toolbar {...{ style: { display: 'flex' } }}>
-      <div {...{ style: { flex: 1 } }}>
-        <Link
-          {...{ to: '/', style: { textDecoration: 'none', color: 'white' } }}
-        >
-          <Typography {...{ color: 'inherit', type: 'title' }}>
-            App Name
-          </Typography>
-        </Link>
-      </div>
-      <div>
-        <Link
-          {...{
-            to: '/login',
-            style: { textDecoration: 'none', color: 'white' }
-          }}
-        >
-          <Button {...{ color: 'inherit' }}>Login</Button>
-        </Link>
-        <Link
-          {...{
-            to: '/signup',
-            style: { textDecoration: 'none', color: 'white' }
-          }}
-        >
-          <Button {...{ color: 'inherit' }}>Signup</Button>
-        </Link>
-      </div>
-    </Toolbar>
-  </AppBar>
-)
+import Navbar from 'app/components/Navbar'
+import Typography from 'material-ui/Typography'
+import { Notifications } from 'pyro-components'
 
 const Footer = () => (
   <div
@@ -82,7 +44,16 @@ const Footer = () => (
           }
         }}
       >
-        <Typography {...{ type: 'caption' }}>Made with {'<3'}</Typography>
+        <Typography {...{ type: 'caption' }}>
+          Made with {'<3'} using{' '}
+          <a
+            style={{ color: 'black' }}
+            target="_blank"
+            href="https://github.com/emars/pyro-base"
+          >
+            pyro-base
+          </a>
+        </Typography>
       </div>
     </div>
   </div>
@@ -106,6 +77,7 @@ const Layout = ({ children }) => {
         {children}
       </div>
       <Footer />
+      <Notifications.component />
     </div>
   )
 }
